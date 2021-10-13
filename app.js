@@ -1,8 +1,12 @@
 'use strict'
 
-console.log('hi')
+console.log('Hi')
 
 const seattleStore = document.getElementById('seattleList');
+const tokyoStore = document.getElementById('tokyoList');
+const dubaiStore = document.getElementById('dubaiList');
+const parisStore = document.getElementById('parisList');
+const limaStore = document.getElementById('limaList');
 
 let hours = ['6 a.m.', '7a.m.', '8 a.m.', '9am', '10 a.m.', '11 a.m.', '12 p.m.','1 p.m','2 p.m.','3 p.m.','4 p.m.','5 p.m.','6 p.m.','7 p.m', 'Total'];
 
