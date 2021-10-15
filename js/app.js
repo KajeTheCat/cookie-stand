@@ -31,7 +31,7 @@ let seattle = {
       let li = document.createElement('li');
       console.log(this.cookiesSoldEachHourArray.push(this.getCookieSalesPerHour()));
       sum += this.cookiesSoldEachHourArray[i];
-      li.textContent = `${hours[i]} ${this.cookiesSoldEachHourArray[i]} cookies.`;
+      li.textContent = `${hours[i]}: ${this.cookiesSoldEachHourArray[i]} cookies.`;
       seattleStore.appendChild(li);
     }
     let liTotal = document.createElement('li');
