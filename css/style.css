@@ -21,3 +21,107 @@ td,th {
     border: 4px solid red;
     padding: 2rem;
 }
+
+body {
+    background-color: lightgray;
+
+  }
+  
+  header {
+    background-color: linen;
+    width: 100%;
+    border: 5px solid black;
+  }
+  
+  header nav {
+    padding: 1rem;
+    align-items: center; 
+    background-color: linen;
+    border: 5px solid black;
+    justify-content: flex-end;
+  }
+
+  main,
+  header nav {
+    margin: 0 auto;
+    width: 960px;
+    justify-content: space-between;
+  }
+
+  main article {
+    float: right;
+    width: 480px;
+    padding: 1rem 0 0 1rem;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    height: 100px;
+  }
+
+  li {
+    align-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  a {
+      text-decoration:none;
+      color: darkred;
+      font-size: 30px;
+  }
+
+  a:hover {
+      color: darksalmon;
+  }
+
+  img {
+      border-radius: 2px;
+      -webkit-box-shadow: 0 10px 6px -6px #777;
+      box-shadow: 0 10px 6px -6px #777;
+  }
+
+  body header {
+      display: flex;
+  }
+
+  header img {
+      width: 400px;
+  }
+
+  main > section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+
+  h1, h2, h3 {
+    text-align: center;
+    font-size: 45px;
+    color: black;
+    padding: 3rem;
+    font-weight: bold;
+  }
+
+  #family {
+      display: flex;
+      justify-content: center;
+  }
+
+  #hourstable {
+      display: flex;
+      justify-content: center;
+      width: 960px;
+  }
+
+  footer ul li {
+      width: 8rem;
+      color: white;
+      font-size: 20px;
+  }
+
+  footer {
+      background-color: darkgrey;
+  }
