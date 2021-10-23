@@ -11,18 +11,42 @@
 <body>
     <a href="index.html">Home</a>
 
+    <aside>
+        <form id='myForm'>
+            <fieldset>
+                <legend>add store</legend>
+                <!--store, min, max, avg-->
+                <label>Name of the store:
+                    <input type='text' name='storeName' id='storeName' required>
+                </label>
+                <label>Minimum:
+                    <input type='number' name='min' id='storeMin' required>
+                </label>
+                <label>Maximum:
+                    <input type='number' name='max' id='storeMax' required>
+                </label>
+                <label>Average:
+                    <input type='number' name='avg' id='storeAvg' required>
+                </label>
+                <button type='submit'>Add new store</button>
+            </fieldset>
+        </form>
+    </aside>
+
     <table>
         <thead>
-            <tr id = 'trow'>
+            <tr id='trow'>
             </tr>
         </thead>
-        <tbody id = 'tbody'>
+        <tbody id='tbody'>
         </tbody>
-        <tfoot id = 'tfooter'>
+        <tfoot id='tfooter'>
         </tfoot>
     </table>
     <footer>
     </footer>
+
+
     <script src="js/app.js"></script>
 </body>
 
