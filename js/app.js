@@ -6,7 +6,10 @@ let hours = ['', '6 a.m.', '7 a.m.', '8 a.m.', '9 a.m.', '10 a.m.', '11 a.m.', '
 let tr = document.getElementById('trow');
 let tbody = document.getElementById('tbody');
 let tfoot = document.getElementById('tfooter');
+const storeForm = document.getElementById('myForm');
+const storeArrayContainer = [];
 
+//create table
 function renderTable() {
   for (let i = 0; i < hours.length; i++) {
     let thhours = document.createElement('th');
@@ -15,6 +18,7 @@ function renderTable() {
   }
 }
 renderTable();
+
 //constructor here
 function Store(name, min, max, avg) {
   this.name = name;
@@ -50,17 +54,23 @@ function Store(name, min, max, avg) {
     globalTotal += sum;
     storeLocations.appendChild(tdTotal);
   };
+  storeArrayContainer.push(this);
 }
 
+//create bottom row
 function renderTFOOTER() {
   let total = document.createElement('tr');
+  total.id = 'total';
   let td = document.createElement('td');
   td.textContent = 'Total';
   total.appendChild(td);
   tfoot.appendChild(total);
-  let totalPerHour = 0;
+
   for (let i = 0; i < hours.length - 2; i++) {
-    totalPerHour = Seattle.cookiesSoldEachHourArray[i] + Tokyo.cookiesSoldEachHourArray[i] + Dubai.cookiesSoldEachHourArray[i] + Paris.cookiesSoldEachHourArray[i] + Lima.cookiesSoldEachHourArray[i];
+    let totalPerHour = 0;
+    for (let j = 0; j < storeArrayContainer.length; j++) {
+      totalPerHour += storeArrayContainer[j].cookiesSoldEachHourArray[i];
+    }
     let tdElement2 = document.createElement('td');
     tdElement2.textContent = totalPerHour;
     total.appendChild(tdElement2);
@@ -68,6 +78,29 @@ function renderTFOOTER() {
   let tdElement2 = document.createElement('td');
   tdElement2.textContent = globalTotal;
   total.appendChild(tdElement2);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let storeName = event.target.storeName.value;
+  let min = parseInt(event.target.min.value);
+  let max = parseInt(event.target.max.value);
+  let avg = parseInt(event.target.avg.value);
+  console.log(storeName, min, max, avg);
+  let newStore = new Store(
+    storeName,
+    min,
+    max,
+    avg
+  );
+  newStore.renderTbody();
+  let trElement = document.querySelector('tfoot tr:first-of-type');
+  trElement.remove();
+  renderTFOOTER();
+  document.getElementById('storeName').value = '';
+  document.getElementById('storeMin').value = '';
+  document.getElementById('storeMax').value = '';
+  document.getElementById('storeAvg').value = '';
 }
 
 //New stores here
@@ -110,3 +143,4 @@ Paris.renderTbody();
 Lima.renderTbody();
 renderTFOOTER();
 console.log(globalTotal);
+storeForm.addEventListener('submit', handleSubmit);
